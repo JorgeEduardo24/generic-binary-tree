@@ -53,18 +53,26 @@ public class NumberTree {
 			
 			//CASE 3: EL NODO A ELIMINAR TIENE 2 HIJOS:
 			else {
-				Number<Integer> succesor = min(number.getRight());
+				Number<Integer> succesor = getMin(number.getRight());
 				number.setNumber(succesor.getNumber());
 				removeNumber(succesor);
 			}
 		}
 	}
 	
-	public Number<Integer> min(Number<Integer> current) {
+	public Number<Integer> getMin(Number<Integer> current) {
 		if(current.getLeft()==null) {
 			return current;
 		}else {
-			return min(current.getLeft());
+			return getMin(current.getLeft());
+		}
+	}
+	
+	public Number<Integer> getMax(Number<Integer> current) {
+		if(current.getRight()==null) {
+			return current;
+		}else {
+			return getMax(current.getRight());
 		}
 	}
 	
@@ -118,5 +126,27 @@ public class NumberTree {
 			}
 		}
 		return found;
+	}
+	
+	public String printTreeInOrder() {
+		String message="";
+		if(getRoot()==null) {
+			return "El árbol está vacío.";
+		}else {
+			message=printTreeInOrder(getRoot(),"");
+			return message;
+		}
+	}
+
+	private String printTreeInOrder(Number<Integer> current,String message) {
+		if (current != null) {
+			message=printTreeInOrder(current.getLeft(),message);
+			message+=(current.toString()+"\n");
+			message=printTreeInOrder(current.getRight(),message);
+		}
+		else {
+			return message;
+		}
+		return message;
 	}
 }

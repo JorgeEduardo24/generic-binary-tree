@@ -46,6 +46,6 @@ public class Number<T> {
 	
 	@Override
 	public String toString() {
-		return "Número: "+getNumber();
+		return getNumber()+"";
 	}
 }

@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import model.Number;
 import model.NumberTree;
 
 public class Menu {
@@ -51,7 +50,7 @@ public class Menu {
 			System.out.println("-----------------------------------------------------");
 			System.out.println("              VALORES DEL ÁRBOL DE NÚMEROS");
 			System.out.println("-----------------------------------------------------");
-			printTreeInOrder();
+			System.out.println(numberTree.printTreeInOrder());
 			break;
 			
 		case 4:
@@ -95,19 +94,5 @@ public class Menu {
 		}
 	}
 	
-	public void printTreeInOrder() {
-		if(numberTree.getRoot()==null) {
-			System.out.println("El árbol está vacío.");
-		}else {
-			printTreeInOrder(numberTree.getRoot());
-		}
-	}
-
-	private void printTreeInOrder(Number<Integer> current) {
-		if (current != null) {
-			printTreeInOrder(current.getRight());
-			System.out.println(current.toString());
-			printTreeInOrder(current.getLeft());
-		}
-	}
+	
 }
