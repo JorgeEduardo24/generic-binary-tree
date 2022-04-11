@@ -1,46 +1,46 @@
 package model;
 
-public class Number<Integer> {
-	private Integer number;
+public class Number<T> {
+	private T number;
 	
 	//Relaciones del árbol binario
-	private Number<Integer> left;
-	private Number<Integer> right;
-	private Number<Integer> up;
+	private Number<T> left;
+	private Number<T> right;
+	private Number<T> up;
 	
-	public Number(Integer number) {
+	public Number(T number) {
 		this.number = number;
 	}
 	
-	public Integer getNumber() {
+	public T getNumber() {
 		return number;
 	}
 
-	public void setNumber(Integer number) {
+	public void setNumber(T number) {
 		this.number = number;
 	}
 
-	public Number<Integer> getLeft() {
+	public Number<T> getLeft() {
 		return left;
 	}
 
-	public void setLeft(Number<Integer> left) {
+	public void setLeft(Number<T> left) {
 		this.left = left;
 	}
 
-	public Number<Integer> getRight() {
+	public Number<T> getRight() {
 		return right;
 	}
 
-	public void setRight(Number<Integer> right) {
+	public void setRight(Number<T> right) {
 		this.right = right;
 	}
 
-	public Number<Integer> getUp() {
+	public Number<T> getUp() {
 		return up;
 	}
 
-	public void setUp(Number<Integer> up) {
+	public void setUp(Number<T> up) {
 		this.up = up;
 	}
 	
