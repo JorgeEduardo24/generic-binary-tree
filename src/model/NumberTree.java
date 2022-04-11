@@ -102,11 +102,11 @@ public class NumberTree {
 		if(root==null) {
 			return null;
 		}else {
-			return searchCarIterative(root, number);
+			return searchNumberIterative(root, number);
 		}
 	}
 
-	private Number<Integer> searchCarIterative(Number<Integer> current, int numberToSearch) {
+	private Number<Integer> searchNumberIterative(Number<Integer> current, int numberToSearch) {
 		Number<Integer> found = null;
 		while(current!=null && found==null) {
 			if(current.getNumber()==numberToSearch) {
